@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Card Reader Application</title>
+    <link rel="stylesheet" href="./assets/bootstrap.min.css" />
+  </head>
+  <body>
+    <h1>
+      <center>Card Reader App</center>
+    </h1>
+    <p>
+      <center>
+        This app is using Node.js <span id="node-version"></span>,
+        Chromium <span id="chrome-version"></span>,
+        and Electron <span id="electron-version"></span>.
+      </center>
+    </p>
+    <div class="container">
+      <div id="login-container" class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Connection</h5>
+              <form id="form-signin" class="form-signin">
+                <div class="form-label-group">
+                  <select id="input-protocol" class="form-control">
+                    <option value="ws">WebSocket</option>
+                    <option value="http">HTTP</option>
+                  </select>
+                  <p></p>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" id="input-host" class="form-control" placeholder="Host" required autofocus>
+                  <p></p>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" id="input-port" class="form-control" placeholder="Port" required>
+                  <p></p>
+                </div>
+                <div class="form-label-group">
+                  <input type="text" id="input-path" class="form-control" placeholder="Path">
+                  <p></p>
+                </div>
+                <button id="submit-form" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Connect</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="reader-container" class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card border-info mb-3">
+            <div class="card-header">
+              <center>
+                <p id="connection-status">
+                  Not Connected
+                </p>
+              </center>
+            </div>
+            <div class="card-body">
+              <center>
+                <p>
+                  Reader Status - <span id="reader-status">Not connected</span>
+                </p>
+                <p>
+                  Card Status - <span id="card-uid">None</span>
+                </p>
+                <button id="disconnect" class="btn btn-lg btn-danger btn-block text-uppercase">Disconnect</button>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script type="text/javascript" src="./assets/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/popper.js"></script>
+    <script type="text/javascript" src="./assets/bootstrap.min.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
