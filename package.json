@@ -7,8 +7,7 @@
     "postinstall": "electron-rebuild",
     "macbuild": "electron-packager . electron-cardreader --overwrite --platform=darwin --arch=x64 --prune=true --out=.build",
     "winbuild": "electron-packager . electron-cardreader --overwrite --platform=win32 --arch=x64 --prune=true --out=.build",
-    "package": "asar pack ./.build/electron-cardreader-darwin-x64/electron-cardreader.app/Contents/Resources/app ./.build/electron-cardreader-darwin-x64/electron-cardreader.app/Contents/Resources/app.asar",
-    "setup": "electron-installer-windows --src .build/electron-cardreader-win32-x64/ --dest .build/installers/",
+    "macpackage": "asar pack ./.build/electron-cardreader-darwin-x64/electron-cardreader.app/Contents/Resources/app ./.build/electron-cardreader-darwin-x64/electron-cardreader.app/Contents/Resources/app.asar",
     "start": "electron ."
   },
   "keywords": [
@@ -22,7 +21,7 @@
   "devDependencies": {
     "asar": "^3.0.3",
     "electron": "^9.0.4",
-    "electron-packager": "^14.2.1",
+    "electron-packager": "^15.0.0",
     "electron-rebuild": "^1.11.0",
     "electron-winstaller": "^4.0.0"
   },
