@@ -1,6 +1,6 @@
 {
   "name": "electron-cardreader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "PCSC Card Reader Electron Application",
   "main": "main.js",
   "scripts": {
