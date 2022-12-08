@@ -4,7 +4,6 @@
   "description": "PCSC Card Reader Electron Application",
   "main": "main.js",
   "scripts": {
-    "postinstall": "electron-rebuild",
     "macbuild": "electron-packager . electron-cardreader --overwrite --platform=darwin --arch=x64 --prune=true --out=.build",
     "winbuild": "electron-packager . electron-cardreader --overwrite --platform=win32 --arch=x64 --prune=true --out=.build",
     "macpackage": "asar pack ./.build/electron-cardreader-darwin-x64/electron-cardreader.app/Contents/Resources/app ./.build/electron-cardreader-darwin-x64/electron-cardreader.app/Contents/Resources/app.asar",
@@ -19,14 +18,14 @@
   "author": "prajadimas",
   "license": "CC0-1.0",
   "devDependencies": {
-    "asar": "^3.0.3",
-    "electron": "^15.5.5",
-    "electron-packager": "^15.0.0",
-    "electron-rebuild": "^1.11.0",
+    "@electron/asar": "^3.2.2",
+    "@electron/rebuild": "^3.2.10",
+    "electron": "^22.0.0",
+    "electron-packager": "^17.1.1",
     "electron-winstaller": "^4.0.0"
   },
   "dependencies": {
-    "pcsclite": "^1.0.0",
-    "ws": "^7.4.6"
+    "pcsclite": "^1.0.1",
+    "ws": "^8.11.0"
   }
 }
